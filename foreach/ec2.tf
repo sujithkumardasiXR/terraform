@@ -1,5 +1,5 @@
 resource "aws_instance" "example" {
-  for each = var.instances
+  for_each = var.instances
   ami           = "ami-0055977a6e828a4f4"
   instance_type = each.value
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
